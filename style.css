@@ -1,0 +1,234 @@
+/* Custom CSS for Portfolio Template */
+
+:root {
+    /* Light Mode Colors */
+    --body-bg: #f8f9fa; /* Light background */
+    --text-color: #343a40; /* Dark text */
+    --heading-color: #212529; /* Even darker headings */
+    --section-bg-light: #ffffff; /* White background for sections */
+    --section-bg-dark: #e9ecef; /* Light gray background for alternating sections */
+    --card-bg: #ffffff; /* White card background */
+    --card-border: #dee2e6; /* Light gray card border */
+    --primary-color: #007bff; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary gray */
+    --link-color: #007bff; /* Link color */
+    --link-hover-color: #0056b3; /* Darker link on hover */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+    --form-control-bg: #ffffff; /* Form control background */
+    --form-control-border: #ced4da; /* Form control border */
+    --form-control-placeholder: #6c757d; /* Placeholder color */
+}
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --body-bg: #212529; /* Dark background */
+    --text-color: #f8f9fa; /* Light text */
+    --heading-color: #e9ecef; /* Lighter headings */
+    --section-bg-light: #2c3034; /* Darker gray for sections */
+    --section-bg-dark: #343a40; /* Even darker gray for alternating sections */
+    --card-bg: #343a40; /* Dark card background */
+    --card-border: #495057; /* Darker card border */
+    --primary-color: #66b3ff; /* Lighter primary blue for contrast */
+    --secondary-color: #adb5bd; /* Lighter secondary gray */
+    --link-color: #66b3ff; /* Link color in dark mode */
+    --link-hover-color: #4da6ff; /* Lighter link on hover */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Darker shadow */
+    --form-control-bg: #495057; /* Dark form control background */
+    --form-control-border: #6c757d; /* Dark form control border */
+    --form-control-placeholder: #ced4da; /* Placeholder color */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6; /* Improved readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    transition: color 0.3s ease;
+}
+
+
+p {
+    color: var(--text-color); /* Ensure paragraph text color is set */
+}
+
+a {
+    color: var(--link-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Navbar specific styles (from header.html) */
+.navbar {
+    background-color: var(--section-bg-light);
+    border-bottom: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--heading-color) !important; /* !important to override Bootstrap */
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-toggler-icon {
+    filter: var(--text-color) == #343a40 ? invert(0) : invert(1); /* Adjust based on text color for visibility */
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+    transition: background-color 0.3s ease;
+}
+
+#hero {
+    min-height: 80vh;
+    background-color: var(--section-bg-light);
+}
+
+#about, #portfolio, #contact {
+    background-color: var(--section-bg-light);
+}
+
+#skills {
+    background-color: var(--section-bg-dark); /* Alternating background */
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--body-bg); /* Text color changes on hover */
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Bootstrap focus shadow */
+}
+
+/* Social Links */
+.social-links a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer specific styles (from footer.html) */
+footer {
+    background-color: var(--section-bg-dark);
+    color: var(--text-color);
+    border-top: 1px solid var(--card-border);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: var(--primary-color);
+    color: var(--body-bg);
+}
+
+body:not(.dark-mode) #darkModeToggle {
+    background-color: var(--secondary-color);
+    color: var(--body-bg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1.1rem;
+    }
+    section {
+        padding: 60px 0;
+    }
+    .social-links a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .social-links a {
+        font-size: 1.2rem;
+    }
+}
